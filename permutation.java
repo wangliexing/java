@@ -1,13 +1,37 @@
-/*
-±àĞ´Ò»¸ö³ÌĞò£¬Êä³ö×Ö·û´®"abcdefgh"µÄÈ«ÅÅÁĞ¡££¨ÌáÊ¾£º¿É¿¼ÂÇµİ¹é£©
-*/
-public class permutation{
-	public static void main(String[] args){
-		char m;
-		char[] chars={'a','b','c'};
-		
-                //´òÓ¡charsµÄÈ«ÅÅÁĞ		
-		permutate(chars,0);
-	}
-			
-}
+
+/**
+ * @title å…¨æ’åˆ—
+ * @author ç‹çƒˆå…´
+ * @description ç¼–å†™ä¸€ä¸ªç¨‹åºï¼Œè¾“å‡ºå­—ç¬¦ä¸²"abcd"çš„å…¨æ’åˆ—ã€‚
+ */
+public class AllSort 
+{  
+  
+  public static void main(String[] args){
+  	    testPermutation();
+  }
+    public static void permutation(char[] buf, int start, int end) {  
+        if (start == end) {
+            for (int i = 0; i <= end; i++) {  
+                System.out.print(buf[i]);  
+            }  
+            System.out.println();  
+        } else {
+            for (int i = start; i <= end; i++) {  
+                char temp = buf[start];  
+                buf[start] = buf[i];  
+                buf[i] = temp;  
+  
+                permutation(buf, start + 1, end);  
+  
+                temp = buf[start];  
+                buf[start] = buf[i];  
+                buf[i] = temp;  
+            }  
+        }  
+    }    
+    public static void testPermutation()  {  
+        char[] buf = new char[] { 'a', 'b', 'c', 'd'};  
+        permutation(buf, 0, 3);  
+    }  
+}  
