@@ -1,15 +1,42 @@
 /*
-ÓÃJava±àĞ´Ò»¸öÄÜ¶ÔÊı×é±È½ÏµÄ³ÌĞò£¬ĞèÒªÊä³ö°´ĞĞÉıĞòÅÅĞòµÄ½á¹û ÈçÊäÈë
+ç”¨Javaç¼–å†™ä¸€ä¸ªèƒ½å¯¹æ•°ç»„æ¯”è¾ƒçš„ç¨‹åºï¼Œéœ€è¦è¾“å‡ºæŒ‰è¡Œå‡åºæ’åºçš„ç»“æœ å¦‚è¾“å…¥
 1 2 5 4 8
-Êä³ö£º
+è¾“å‡ºï¼š
 1 2 4 5 8
-ÒªÇó£ºÊı×éÊÇÍ¨¹ısort³ÌĞòµÄ²ÎÊıÊäÈë¡£
+è¦æ±‚ï¼šæ•°ç»„æ˜¯é€šè¿‡sortç¨‹åºçš„å‚æ•°è¾“å…¥ã€‚
 */
-public class sort{
-	 public static void main(String[] args){
-         //½«args×ª»»ÎªintÊı×é
-         
-         //¶ÔintÊı×éÅÅĞòºóÊä³ö½á¹û
-	 	 
-	}
+public class Helloword
+{
+
+   public static void main(String[] args)
+   {	  
+       
+       int score[] = new int[args.length];
+       for(int i=0;i<args.length;i++)
+       {
+       	  score[i]=Integer.parseInt(args[i]);
+       }
+       
+       
+        for (int i = 0; i < score.length -1; i++)
+        {    
+             for(int j = 0 ;j < score.length - i - 1; j++)
+             {   
+                 if(score[j] < score[j + 1])
+                 {    
+                    int temp = score[j];
+                      score[j] = score[j + 1];
+                     score[j + 1] = temp;
+                }
+             }            
+             
+         }
+              System.out.print("æ’åºç»“æœï¼š");
+              for(int a = 0; a < score.length; a++)
+              {
+                  System.out.print(score[a] + "\t");
+              }
+   }
 }
+
+	 
