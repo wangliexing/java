@@ -1,11 +1,27 @@
 /*
-±àĞ´Ò»¸ö³ÌĞò£¬¼ÆËã×ÔÈ»ÊınµÄ½×³Ën!¡££¨ÌáÊ¾£º¿ÉÓÃÑ­»·Íê³É£©
+ç¼–å†™ä¸€ä¸ªç¨‹åºï¼Œè®¡ç®—è‡ªç„¶æ•°nçš„é˜¶ä¹˜n!ã€‚ï¼ˆæç¤ºï¼šå¯ç”¨å¾ªç¯å®Œæˆï¼‰
 */
-public class factorial{
-	 public static void main(String[] args){
-         //½«args[0]×ª»»Îª½×Êın
-         
-         //Ñ­»·¼ÆËãn!£¬·µ»Ø½á¹û
-	 	 
+import java.util.Scanner;
+public class Test {
+	public static void main(String[] args){
+		Scanner in=new Scanner(System.in);
+		int n;
+		System.out.print("è¯·è¾“å…¥ä¸€ä¸ªè‡ªç„¶æ•°:");
+		try{	
+			n=in.nextInt();
+			if(n<=0){
+				System.out.println("è¾“å…¥é”™è¯¯ï¼");
+				return;
+			}
+			System.out.println(n+"!="+fac(n));
+		}
+		catch(Exception e){		e.printStackTrace();	}
+	}
+	public static long fac(int n){
+		long sum=1;
+		int i;
+		for(i=1;i<=n;i++)
+			sum=sum*i;
+		return sum;
 	}
 }
